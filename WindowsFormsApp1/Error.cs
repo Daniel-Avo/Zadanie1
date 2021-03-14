@@ -9,11 +9,21 @@ namespace WindowsFormsApp1
 {
     class Error
     {
-        public static void error()
+        public static void errInterface()
         {
-            string message = "Wybierz interfejs";
+            string message = "Choose interface";
             string caption = "Error";
             var result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
         }
+
+        public static void errVariables()
+        {
+            string message = "Enter properly property and model";
+            string caption = "Error";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+        }
+
+
+
     }
 }

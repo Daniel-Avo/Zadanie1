@@ -21,9 +21,14 @@ namespace WindowsFormsApp1
             label2.Text = "Choose toy";
             label3.Text = "Model";
             label4.Text = "Property";
+            label5.Text = "Property value:";
+            label6.Text = "";
+            
 
 			combo_interfaces.DropDownStyle = ComboBoxStyle.DropDownList;
-			combo_interfaces.Items.Add("Car");
+            toy_box.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            combo_interfaces.Items.Add("Car");
             combo_interfaces.Items.Add("Plane");
             combo_interfaces.Items.Add("Submarine");
         }
@@ -48,25 +53,45 @@ namespace WindowsFormsApp1
             {
                 case "Car":
                     {
-                        car_list.Add(new Car(1, "dummy"));
-                        toyBoxMethod();
+                        try {
+                            car_list.Add(new Car(Convert.ToInt32(propertybox.Text), modelbox.Text));
+                            toyBoxMethod();
+                        }
+                        catch(Exception ex)
+                        {
+                            Error.errVariables();
+                        }
                         break;
                     }
                 case "Plane":
                     {
-                        plane_list.Add(new Plane(1, "dummy"));
-                        toyBoxMethod();
+                        try
+                        {
+                            plane_list.Add(new Plane(Convert.ToInt32(propertybox.Text), modelbox.Text));
+                            toyBoxMethod();
+                        }
+                        catch (Exception ex)
+                        {
+                            Error.errVariables();
+                        }
                         break;
                     }
                 case "Submarine":
                     {
-                        sub_list.Add(new Submarine(1, "dummy"));
-                        toyBoxMethod();
+                        try
+                        {
+                            sub_list.Add(new Submarine(Convert.ToInt32(propertybox.Text), modelbox.Text));
+                            toyBoxMethod();
+                        }
+                        catch (Exception ex)
+                        {
+                            Error.errVariables();
+                        }
                         break;
                     }
 
                 default:
-                    Error.error();
+                    Error.errInterface();
                     break;
             }
         }
@@ -83,7 +108,49 @@ namespace WindowsFormsApp1
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (combo_interfaces.Text)
+            {
+                case "Car":
+                    {
+                        foreach (Car i in car_list)
+                        {
+                            if (toy_box.Text == i.getModel())
+                            {
+                                label6.Text = i.getAcceleration().ToString();
+                            }
+                        }
+                    }
+                    break;
 
+                case "Plane":
+                    {
+                        label4.Text = "Rise";
+                        foreach (Plane i in plane_list)
+                        {
+                            if (toy_box.Text == i.getModel())
+                            {
+                                label6.Text = i.getRise().ToString();
+                            }
+                        }
+                        break;
+                    }
+                case "Submarine":
+                    {
+                        label4.Text = "Depth";
+                        foreach (Submarine i in sub_list)
+                        {
+                            if (toy_box.Text == i.getModel())
+                            {
+                                label6.Text = i.getDepth().ToString();
+                            }
+                        }
+                        break;
+                    }
+
+                default:
+                    Error.errInterface();
+                    break;
+            }
         }
 
         private void toyBoxMethod()
@@ -97,7 +164,7 @@ namespace WindowsFormsApp1
                         label4.Text = "Acceleration";
                         foreach (Car i in car_list)
                         {
-                            toy_box.Items.Add(i);
+                            toy_box.Items.Add(i.getModel());
                         }
                     }
                     break;
@@ -107,7 +174,7 @@ namespace WindowsFormsApp1
                         label4.Text = "Rise";
                         foreach (Plane i in plane_list)
                         {
-                            toy_box.Items.Add(i);
+                            toy_box.Items.Add(i.getModel());
                         }
                         break;
                     }
@@ -116,15 +183,20 @@ namespace WindowsFormsApp1
                         label4.Text = "Depth";
                         foreach (Submarine i in sub_list)
                         {
-                            toy_box.Items.Add(i);
+                            toy_box.Items.Add(i.getModel());
                         }
                         break;
                     }
 
                 default:
-                    Error.error();
+                    Error.errInterface();
                     break;
             }
+        }
+
+        private void addNewEntry()
+        {
+
         }
     }
 }

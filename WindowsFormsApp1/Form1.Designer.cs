@@ -37,6 +37,10 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.modelbox = new System.Windows.Forms.TextBox();
+            this.propertybox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // combo_interfaces
@@ -104,11 +108,47 @@ namespace WindowsFormsApp1
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
+            // modelbox
+            // 
+            this.modelbox.Location = new System.Drawing.Point(472, 188);
+            this.modelbox.Name = "modelbox";
+            this.modelbox.Size = new System.Drawing.Size(121, 20);
+            this.modelbox.TabIndex = 8;
+            // 
+            // propertybox
+            // 
+            this.propertybox.Location = new System.Drawing.Point(472, 224);
+            this.propertybox.Name = "propertybox";
+            this.propertybox.Size = new System.Drawing.Size(121, 20);
+            this.propertybox.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(599, 153);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(672, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "label6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 580);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.propertybox);
+            this.Controls.Add(this.modelbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -134,6 +174,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox modelbox;
+        private System.Windows.Forms.TextBox propertybox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

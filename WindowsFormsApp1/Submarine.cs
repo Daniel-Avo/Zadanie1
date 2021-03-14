@@ -21,5 +21,14 @@ namespace WindowsFormsApp1
         {
             this.depth = dep_changed;
         }
+        public string getModel()
+        {
+            return this.model;
+        }
+
+        public int getDepth()
+        {
+            return this.depth;
+        }
     }
 }

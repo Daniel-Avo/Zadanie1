@@ -21,5 +21,15 @@ namespace WindowsFormsApp1
         {
             this.acceleration = acc_changed;
         }
+
+        public string getModel()
+        {
+            return this.model;
+        }
+
+        public int getAcceleration()
+        {
+            return this.acceleration;
+        }
     }
 }

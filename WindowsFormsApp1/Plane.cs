@@ -21,5 +21,15 @@ namespace WindowsFormsApp1
         {
             this.rise = ri_changed;
         }
+
+        public string getModel()
+        {
+            return this.model;
+        }
+
+        public int getRise()
+        {
+            return this.rise;
+        }
     }
 }
