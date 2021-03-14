@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
 
 			label1.Text = "Choose interface";
             label2.Text = "Choose toy";
+            label3.Text = "Model";
+            label4.Text = "Property";
+
 			combo_interfaces.DropDownStyle = ComboBoxStyle.DropDownList;
 			combo_interfaces.Items.Add("Car");
             combo_interfaces.Items.Add("Plane");
@@ -46,16 +49,19 @@ namespace WindowsFormsApp1
                 case "Car":
                     {
                         car_list.Add(new Car(1, "dummy"));
+                        toyBoxMethod();
                         break;
                     }
                 case "Plane":
                     {
                         plane_list.Add(new Plane(1, "dummy"));
+                        toyBoxMethod();
                         break;
                     }
                 case "Submarine":
                     {
                         sub_list.Add(new Submarine(1, "dummy"));
+                        toyBoxMethod();
                         break;
                     }
 
@@ -67,41 +73,7 @@ namespace WindowsFormsApp1
 
         private void combo_interfaces_SelectedIndexChanged(object sender, EventArgs e)
         {
-            toy_box.Items.Clear();
-
-            switch (combo_interfaces.Text)
-            {
-                case "Car":
-                    {
-                        foreach (Car i in car_list)
-                        {
-                            toy_box.Items.Add(i);
-                        }
-                    }
-                     break;
-                    
-                case "Plane":
-                    {
-                        foreach (Plane i in car_list)
-                        {
-                            toy_box.Items.Add(i);
-                        }
-                        break;
-                    }
-                case "Submarine":
-                    {
-                        foreach (Submarine i in car_list)
-                        {
-                            toy_box.Items.Add(i);
-                        }
-                        break;
-                    }
-
-                default:
-                    Error.error();
-                    break;
-            }
-
+            toyBoxMethod();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -112,6 +84,47 @@ namespace WindowsFormsApp1
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void toyBoxMethod()
+        {
+            toy_box.Items.Clear();
+
+            switch (combo_interfaces.Text)
+            {
+                case "Car":
+                    {
+                        label4.Text = "Acceleration";
+                        foreach (Car i in car_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                    }
+                    break;
+
+                case "Plane":
+                    {
+                        label4.Text = "Rise";
+                        foreach (Plane i in plane_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                        break;
+                    }
+                case "Submarine":
+                    {
+                        label4.Text = "Depth";
+                        foreach (Submarine i in sub_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                        break;
+                    }
+
+                default:
+                    Error.error();
+                    break;
+            }
         }
     }
 }

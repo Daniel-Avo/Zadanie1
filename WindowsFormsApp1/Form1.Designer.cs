@@ -35,7 +35,8 @@ namespace WindowsFormsApp1
             this.b_dodaj = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // combo_interfaces
@@ -50,7 +51,7 @@ namespace WindowsFormsApp1
             // toy_box
             // 
             this.toy_box.FormattingEnabled = true;
-            this.toy_box.Location = new System.Drawing.Point(472, 194);
+            this.toy_box.Location = new System.Drawing.Point(472, 150);
             this.toy_box.Name = "toy_box";
             this.toy_box.Size = new System.Drawing.Size(121, 21);
             this.toy_box.TabIndex = 1;
@@ -58,7 +59,7 @@ namespace WindowsFormsApp1
             // 
             // b_dodaj
             // 
-            this.b_dodaj.Location = new System.Drawing.Point(271, 319);
+            this.b_dodaj.Location = new System.Drawing.Point(271, 326);
             this.b_dodaj.Name = "b_dodaj";
             this.b_dodaj.Size = new System.Drawing.Size(138, 98);
             this.b_dodaj.TabIndex = 3;
@@ -69,7 +70,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(374, 202);
+            this.label2.Location = new System.Drawing.Point(374, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -85,19 +86,31 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(706, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(374, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(374, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 580);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.b_dodaj);
@@ -119,7 +132,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button b_dodaj;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
