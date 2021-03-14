@@ -56,6 +56,8 @@ namespace WindowsFormsApp1
                         try {
                             car_list.Add(new Car(Convert.ToInt32(propertybox.Text), modelbox.Text));
                             toyBoxMethod();
+                            propertybox.Clear();
+                            modelbox.Clear();
                         }
                         catch(Exception ex)
                         {
@@ -69,6 +71,8 @@ namespace WindowsFormsApp1
                         {
                             plane_list.Add(new Plane(Convert.ToInt32(propertybox.Text), modelbox.Text));
                             toyBoxMethod();
+                            propertybox.Clear();
+                            modelbox.Clear();
                         }
                         catch (Exception ex)
                         {
@@ -82,6 +86,8 @@ namespace WindowsFormsApp1
                         {
                             sub_list.Add(new Submarine(Convert.ToInt32(propertybox.Text), modelbox.Text));
                             toyBoxMethod();
+                            propertybox.Clear();
+                            modelbox.Clear();
                         }
                         catch (Exception ex)
                         {
@@ -153,6 +159,64 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void b_change_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (combo_interfaces.Text)
+                {
+                    case "Car":
+                        {
+                            foreach (Car i in car_list)
+                            {
+                                if (toy_box.Text == i.getModel())
+                                {
+                                    i.change(Convert.ToInt32(propertybox.Text));
+                                    label6.Text = i.getAcceleration().ToString();
+                                }
+                            }
+                        }
+                        break;
+
+                    case "Plane":
+                        {
+                            label4.Text = "Rise";
+                            foreach (Plane i in plane_list)
+                            {
+                                if (toy_box.Text == i.getModel())
+                                {
+                                    i.change(Convert.ToInt32(propertybox.Text));
+                                    label6.Text = i.getRise().ToString();
+                                }
+                            }
+                            break;
+                        }
+                    case "Submarine":
+                        {
+                            label4.Text = "Depth";
+                            foreach (Submarine i in sub_list)
+                            {
+                                if (toy_box.Text == i.getModel())
+                                {
+                                    i.change(Convert.ToInt32(propertybox.Text));
+                                    label6.Text = i.getDepth().ToString();
+                                }
+                            }
+                            break;
+                        }
+                    default:
+                        {
+                            Error.errProperty();
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                Error.errProperty();
+            }
+            
+        }
         private void toyBoxMethod()
         {
             toy_box.Items.Clear();
@@ -194,9 +258,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void addNewEntry()
-        {
 
-        }
+
     }
 }

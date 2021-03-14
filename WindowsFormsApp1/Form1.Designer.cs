@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             this.combo_interfaces = new System.Windows.Forms.ComboBox();
             this.toy_box = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.b_dodaj = new System.Windows.Forms.Button();
+            this.b_add = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             this.propertybox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.b_change = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // combo_interfaces
@@ -61,15 +62,15 @@ namespace WindowsFormsApp1
             this.toy_box.TabIndex = 1;
             this.toy_box.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // b_dodaj
+            // b_add
             // 
-            this.b_dodaj.Location = new System.Drawing.Point(271, 326);
-            this.b_dodaj.Name = "b_dodaj";
-            this.b_dodaj.Size = new System.Drawing.Size(138, 98);
-            this.b_dodaj.TabIndex = 3;
-            this.b_dodaj.Text = "Dodaj obiekt";
-            this.b_dodaj.UseVisualStyleBackColor = true;
-            this.b_dodaj.Click += new System.EventHandler(this.b_dodaj_Click);
+            this.b_add.Location = new System.Drawing.Point(333, 326);
+            this.b_add.Name = "b_add";
+            this.b_add.Size = new System.Drawing.Size(138, 98);
+            this.b_add.TabIndex = 3;
+            this.b_add.Text = "Add object";
+            this.b_add.UseVisualStyleBackColor = true;
+            this.b_add.Click += new System.EventHandler(this.b_dodaj_Click);
             // 
             // label2
             // 
@@ -140,11 +141,22 @@ namespace WindowsFormsApp1
             this.label6.TabIndex = 11;
             this.label6.Text = "label6";
             // 
+            // b_change
+            // 
+            this.b_change.Location = new System.Drawing.Point(550, 326);
+            this.b_change.Name = "b_change";
+            this.b_change.Size = new System.Drawing.Size(147, 98);
+            this.b_change.TabIndex = 12;
+            this.b_change.Text = "Change property";
+            this.b_change.UseVisualStyleBackColor = true;
+            this.b_change.Click += new System.EventHandler(this.b_change_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 580);
+            this.Controls.Add(this.b_change);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.propertybox);
@@ -153,7 +165,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.b_dodaj);
+            this.Controls.Add(this.b_add);
             this.Controls.Add(this.toy_box);
             this.Controls.Add(this.combo_interfaces);
             this.Name = "Form1";
@@ -169,7 +181,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox combo_interfaces;
         private System.Windows.Forms.ComboBox toy_box;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button b_dodaj;
+        private System.Windows.Forms.Button b_add;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -178,6 +190,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox propertybox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button b_change;
     }
 }
 

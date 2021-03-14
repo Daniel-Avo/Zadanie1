@@ -18,12 +18,17 @@ namespace WindowsFormsApp1
 
         public static void errVariables()
         {
-            string message = "Enter properly property and model";
+            string message = "Enter corect property and model";
             string caption = "Error";
             var result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
         }
 
-
+        public static void errProperty()
+        {
+            string message = "Property must be integer value";
+            string caption = "Error";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+        }
 
     }
 }
