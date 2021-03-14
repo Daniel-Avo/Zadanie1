@@ -30,11 +30,12 @@ namespace WindowsFormsApp1
 		private void InitializeComponent()
 		{
             this.combo_interfaces = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.toy_box = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.b_dodaj = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // combo_interfaces
@@ -44,14 +45,16 @@ namespace WindowsFormsApp1
             this.combo_interfaces.Name = "combo_interfaces";
             this.combo_interfaces.Size = new System.Drawing.Size(121, 21);
             this.combo_interfaces.TabIndex = 0;
+            this.combo_interfaces.SelectedIndexChanged += new System.EventHandler(this.combo_interfaces_SelectedIndexChanged);
             // 
-            // comboBox2
+            // toy_box
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(472, 194);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
+            this.toy_box.FormattingEnabled = true;
+            this.toy_box.Location = new System.Drawing.Point(472, 194);
+            this.toy_box.Name = "toy_box";
+            this.toy_box.Size = new System.Drawing.Size(121, 21);
+            this.toy_box.TabIndex = 1;
+            this.toy_box.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // b_dodaj
             // 
@@ -71,6 +74,7 @@ namespace WindowsFormsApp1
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -81,15 +85,23 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(706, 359);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(177, 20);
+            this.textBox1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 580);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.b_dodaj);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.toy_box);
             this.Controls.Add(this.combo_interfaces);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -102,11 +114,12 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.ComboBox combo_interfaces;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox toy_box;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button b_dodaj;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

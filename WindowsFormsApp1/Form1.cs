@@ -45,17 +45,17 @@ namespace WindowsFormsApp1
             {
                 case "Car":
                     {
-                        car_list.Add(new Car(1));
+                        car_list.Add(new Car(1, "dummy"));
                         break;
                     }
                 case "Plane":
                     {
-                        plane_list.Add(new Plane(1));
+                        plane_list.Add(new Plane(1, "dummy"));
                         break;
                     }
                 case "Submarine":
                     {
-                        sub_list.Add(new Submarine(1));
+                        sub_list.Add(new Submarine(1, "dummy"));
                         break;
                     }
 
@@ -63,6 +63,55 @@ namespace WindowsFormsApp1
                     Error.error();
                     break;
             }
+        }
+
+        private void combo_interfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            toy_box.Items.Clear();
+
+            switch (combo_interfaces.Text)
+            {
+                case "Car":
+                    {
+                        foreach (Car i in car_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                    }
+                     break;
+                    
+                case "Plane":
+                    {
+                        foreach (Plane i in car_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                        break;
+                    }
+                case "Submarine":
+                    {
+                        foreach (Submarine i in car_list)
+                        {
+                            toy_box.Items.Add(i);
+                        }
+                        break;
+                    }
+
+                default:
+                    Error.error();
+                    break;
+            }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

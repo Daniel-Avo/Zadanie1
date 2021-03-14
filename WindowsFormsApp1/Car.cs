@@ -9,10 +9,12 @@ namespace WindowsFormsApp1
     class Car : IAccelerate
     {
         int acceleration;
+        string model;
 
-        public Car(int acceleration)
+        public Car(int acceleration, string model)
         {
             this.acceleration = acceleration;
+            this.model = model;
         }
 
         public void change(int acc_changed)
