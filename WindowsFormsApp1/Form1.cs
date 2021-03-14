@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +25,11 @@ namespace WindowsFormsApp1
             combo_interfaces.Items.Add("Submarine");
         }
 
-		
+        ArrayList car_list = new ArrayList();
+        ArrayList plane_list = new ArrayList();
+        ArrayList sub_list = new ArrayList();
 
-		private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
 		{
 
 		}
@@ -42,17 +45,17 @@ namespace WindowsFormsApp1
             {
                 case "Car":
                     {
-                        Car car = new Car(1);
+                        car_list.Add(new Car(1));
                         break;
                     }
                 case "Plane":
                     {
-                        Plane plane = new Plane(1);
+                        plane_list.Add(new Plane(1));
                         break;
                     }
                 case "Submarine":
                     {
-                        Submarine submarine = new Submarine(1);
+                        sub_list.Add(new Submarine(1));
                         break;
                     }
 
